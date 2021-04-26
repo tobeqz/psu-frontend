@@ -1,5 +1,5 @@
 <script lang="ts">
-    import  type MouseEventHandler from "svelte/JSX";
+    import type MouseEventHandler from "svelte/JSX";
 
     export let onclick: MouseEventHandler;
 </script>

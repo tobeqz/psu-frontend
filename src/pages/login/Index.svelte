@@ -13,11 +13,11 @@ import { onMount } from "svelte";
     function submit() {
         localStorage.setItem("key", key)
 
-        window.location.pathname = "/obfuscate"
+        window.location.pathname += "/obfuscate"
     }
 
     onMount(() => {
-        if (localStorage.getItem("key") && window.location.pathname == "/") {
+        if (localStorage.getItem("key") && window.location.pathname != "/login" && window.location.pathname != "/psu-frontend/login") {
             window.location.pathname = '/obfuscate'
         }
     })
