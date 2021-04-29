@@ -56,10 +56,15 @@ import { onMount } from "svelte";
     input[type="submit"]:hover {
         transform: scale(1.1, 1.1);
     }
+
+    p {
+        color: rgba(255, 255, 255, 0.5);
+    }
 </style>
 
 <div class="container">
     <h1>Please enter your API key:</h1>
+    <p>Stored locally</p>
     <input type="password" on:keydown={checkEnter} bind:value={key}>
     <br/><br/>
     <input type="submit" value="Submit" on:click={submit}>
