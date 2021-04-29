@@ -33,9 +33,9 @@
     }
 </style>
 
-<div class="container">
+<div class="container" on:click={toggle}>
     <p>{name}</p>
-    <div transition:fade on:click={toggle} class="toggle_checkbox {clickedClass}">
+    <div transition:fade class="toggle_checkbox {clickedClass}">
 
     </div>
 </div>

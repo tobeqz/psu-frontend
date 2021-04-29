@@ -65,7 +65,7 @@
 		<FileInput bind:file_contents={file_content} />
 	</div>
 
-	<SubmitButton onclick={submit} />
+	<SubmitButton on:click={submit} />
 	<br/>
 	<a id="download_link" href={download_link}>Download</a>
 </main>

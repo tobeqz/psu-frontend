@@ -1,7 +1,11 @@
 <script lang="ts">
-    import type MouseEventHandler from "svelte/JSX";
+    import { createEventDispatcher } from "svelte";
 
-    export let onclick: MouseEventHandler;
+    const dispatch = createEventDispatcher();
+
+    function click() {
+        dispatch("click");
+    }
 </script>
 
 <style>
@@ -22,6 +26,6 @@
     }
 </style>
 
-<button on:click={onclick}>
+<button on:click={click}>
     Obfuscate
 </button>
