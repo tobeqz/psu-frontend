@@ -3,6 +3,7 @@
 	import BytecodeSelect from "./BytecodeSelect.svelte"
 	import FileInput from "./FileInput.svelte"
 	import SubmitButton from "./SubmitButton.svelte"
+	import Download from './DownloadButton.svelte'
 
 	let encrypt_all_strings = false
 	let enhanced_output = false
@@ -15,7 +16,7 @@
 	let bytecode = "Default"
 	let file_content = ""
 
-	let download_link = ""
+	let download_link = "#"
 
 	async function submit() {
 		const params = {
@@ -46,7 +47,6 @@
 			const blob = new Blob([obfuscated_file], {type: "text/plain"})
 
 			download_link = window.URL.createObjectURL(blob)
-			window.location.replace(download_link);
 		}
 	}
 </script>
@@ -67,7 +67,7 @@
 
 	<SubmitButton on:click={submit} />
 	<br/>
-	<a id="download_link" href={download_link}>Download</a>
+	<Download link={download_link} />
 </main>
 
 <style>
@@ -85,9 +85,5 @@
 		align-items: center;
 		justify-self: space-between; 
 		margin: 0 auto;
-	}
-
-	a {
-		visibility: hidden;
 	}
 </style>
