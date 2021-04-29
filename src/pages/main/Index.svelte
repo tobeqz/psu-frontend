@@ -42,7 +42,7 @@
 		})	
 
 		if (response.status == 200) {
-			const obfuscated_file = await response.text()
+			const obfuscated_file = JSON.parse(await response.text()).data
 			const blob = new Blob([obfuscated_file], {type: "text/plain"})
 
 			download_link = window.URL.createObjectURL(blob)
